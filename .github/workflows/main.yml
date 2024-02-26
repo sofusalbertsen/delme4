@@ -1,5 +1,8 @@
 name: Main workflow
 on: push
+env: # Set the secret as an input
+  docker_username: nielslassen
+  docker_password: ${{ secrets.GITHUB_TOKEN }} #Nees to be set to be made available to the workflow
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -32,3 +35,9 @@ jobs:
     needs: [Build]
     permissions:
       packages: write
+    steps:
+    - name: build docker
+      run: bash ci/build-docker.sh
+    - name: push docker
+      run: bash ci/push-docker.sh
+      
