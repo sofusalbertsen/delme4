@@ -24,6 +24,6 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
       - uses: super-linter/super-linter/slim@v5
-        with: 
+        env: 
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
