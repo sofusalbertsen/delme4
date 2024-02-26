@@ -43,7 +43,7 @@ jobs:
         name: code
         path: .
     - name: ls
-      run: ls -la ci        
+      run: ls -la ci
     - name: build docker
       run: bash ci/build-docker.sh
     - name: push docker
