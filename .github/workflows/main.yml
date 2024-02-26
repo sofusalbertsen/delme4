@@ -11,3 +11,8 @@ jobs:
       - name: Test
         uses: actions/checkout@v4
       - run: ci/unit-test-app.sh
+      - name: Upload a Build Artifact # Name of the step
+        uses: actions/upload-artifact@v4 # Action to use
+        with: # Parameters for the action
+          name: my-artifact # Name of the artifact to upload. Optional. Default is 'artifact
+          path: path/to/artifact/ # A file, directory or wildcard pattern that describes what to upload. Required.      
